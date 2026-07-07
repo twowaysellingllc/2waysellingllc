@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2Wayselling LLC | Premium Car Rentals</title>
+  <meta name="description" content="2Wayselling LLC offers reliable, clean, and affordable car rentals for business, travel, and everyday driving." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="#home" aria-label="2Wayselling LLC home">
+        <span class="brand-mark">2W</span>
+        <span class="brand-text">2Way<span>Selling</span> LLC</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#fleet">Fleet</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#why">Why Us</a>
+        <a href="#booking">Reserve</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">Premium Car Rental Service</p>
+          <h1>Drive your journey with confidence.</h1>
+          <p class="hero-text">Clean, reliable, and affordable rental cars for business trips, vacations, airport rides, and daily travel.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#booking">Reserve Now</a>
+            <a class="btn btn-secondary" href="#fleet">View Fleet</a>
+          </div>
+        </div>
+        <form class="booking-card" id="quickBooking">
+          <h2>Quick Reservation</h2>
+          <div class="field-grid">
+            <label>Pickup Location<input type="text" placeholder="City or Airport" required></label>
+            <label>Return Location<input type="text" placeholder="Same or different location" required></label>
+            <label>Pickup Date<input type="date" required></label>
+            <label>Return Date<input type="date" required></label>
+            <label>Vehicle Type<select required><option value="">Select type</option><option>Economy</option><option>Sedan</option><option>SUV</option><option>Luxury</option><option>Electric</option></select></label>
+            <label>Phone Number<input type="tel" placeholder="Your phone" required></label>
+          </div>
+          <button type="submit" class="btn btn-primary full">Check Availability</button>
+          <p class="form-note" id="quickBookingNote">Submit your request and our team will contact you.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="stats container">
+      <div><strong>24/7</strong><span>Customer Support</span></div>
+      <div><strong>Clean</strong><span>Sanitized Vehicles</span></div>
+      <div><strong>Daily</strong><span>Weekly & Monthly Rentals</span></div>
+      <div><strong>Easy</strong><span>Online Booking</span></div>
+    </section>
+
+    <section class="section container" id="fleet">
+      <div class="section-head">
+        <p class="eyebrow">Our Fleet</p>
+        <h2>Choose the right vehicle for your trip.</h2>
+        <p>From economy cars to SUVs and luxury options, 2Wayselling LLC keeps your travel simple and professional.</p>
+      </div>
+      <div class="fleet-grid">
+        <article class="car-card">
+          <div class="car-image sedan"></div>
+          <div class="car-body"><h3>Toyota Camry</h3><p>Comfortable sedan for business and daily travel.</p><ul><li>5 Seats</li><li>Automatic</li><li>Great MPG</li></ul><strong>From $49/day</strong><a href="#booking" class="card-link">Book Now</a></div>
+        </article>
+        <article class="car-card">
+          <div class="car-image suv"></div>
+          <div class="car-body"><h3>Chevrolet Tahoe</h3><p>Spacious SUV for family trips and group travel.</p><ul><li>7 Seats</li><li>Automatic</li><li>Large Cargo</li></ul><strong>From $89/day</strong><a href="#booking" class="card-link">Book Now</a></div>
+        </article>
+        <article class="car-card">
+          <div class="car-image luxury"></div>
+          <div class="car-body"><h3>Mercedes C-Class</h3><p>Premium ride for events, clients, and luxury travel.</p><ul><li>5 Seats</li><li>Luxury Interior</li><li>Premium Comfort</li></ul><strong>From $99/day</strong><a href="#booking" class="card-link">Book Now</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section dark" id="pricing">
+      <div class="container pricing-wrap">
+        <div>
+          <p class="eyebrow">Simple Pricing</p>
+          <h2>Flexible rentals for any schedule.</h2>
+          <p>Daily, weekly, and monthly options are available. Custom quotes are provided based on vehicle type, rental period, pickup location, and add-ons.</p>
+        </div>
+        <div class="pricing-cards">
+          <div><h3>Daily</h3><strong>$49+</strong><span>Best for short trips</span></div>
+          <div><h3>Weekly</h3><strong>Save More</strong><span>Best for vacations</span></div>
+          <div><h3>Monthly</h3><strong>Custom</strong><span>Best for long-term rentals</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="why">
+      <div class="section-head">
+        <p class="eyebrow">Why Choose Us</p>
+        <h2>Reliable vehicles. Professional service.</h2>
+      </div>
+      <div class="features-grid">
+        <div><span>✓</span><h3>Affordable Rates</h3><p>Competitive rental pricing with clear options.</p></div>
+        <div><span>✓</span><h3>Clean Fleet</h3><p>Vehicles are maintained, inspected, and cleaned before handoff.</p></div>
+        <div><span>✓</span><h3>Fast Booking</h3><p>Send a reservation request in minutes from any device.</p></div>
+        <div><span>✓</span><h3>Support</h3><p>Friendly support for pickup, return, and rental questions.</p></div>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container">
+        <div class="section-head light"><p class="eyebrow">Reviews</p><h2>Customers trust 2Wayselling LLC.</h2></div>
+        <div class="review-grid">
+          <blockquote>“Professional service and a clean car. The process was very easy.”<span>★★★★★</span></blockquote>
+          <blockquote>“Affordable pricing and quick communication. Highly recommended.”<span>★★★★★</span></blockquote>
+          <blockquote>“Great rental experience for my business trip.”<span>★★★★★</span></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="booking">
+      <div class="booking-section">
+        <div>
+          <p class="eyebrow">Reserve Now</p>
+          <h2>Request your rental today.</h2>
+          <p>Fill out the form and 2Wayselling LLC will contact you to confirm vehicle availability, pricing, pickup instructions, and rental requirements.</p>
+        </div>
+        <form class="main-form" id="reservationForm">
+          <label>Full Name<input type="text" placeholder="Your full name" required></label>
+          <label>Email<input type="email" placeholder="you@example.com" required></label>
+          <label>Phone<input type="tel" placeholder="Phone number" required></label>
+          <label>Vehicle Preference<select required><option value="">Select vehicle</option><option>Toyota Camry</option><option>Chevrolet Tahoe</option><option>Mercedes C-Class</option><option>Other / Not sure</option></select></label>
+          <label>Pickup Date<input type="date" required></label>
+          <label>Return Date<input type="date" required></label>
+          <label class="wide">Message<textarea placeholder="Tell us your pickup location, trip details, or special requests"></textarea></label>
+          <button type="submit" class="btn btn-primary full">Submit Reservation Request</button>
+          <p class="form-note" id="reservationNote"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Ready to rent?</h2>
+          <p>Contact 2Wayselling LLC for vehicle availability, quotes, and rental support.</p>
+        </div>
+        <div class="contact-card">
+          <p><strong>Website:</strong> 2waysellingllc.com</p>
+          <p><strong>Email:</strong> info@2waysellingllc.com</p>
+          <p><strong>Phone:</strong> Add your business phone</p>
+          <p><strong>Hours:</strong> Monday - Sunday, 8:00 AM - 8:00 PM</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> 2Wayselling LLC. All rights reserved.</p>
+      <p>Premium Car Rentals • 2waysellingllc.com</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
