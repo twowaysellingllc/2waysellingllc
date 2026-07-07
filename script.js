@@ -23,13 +23,9 @@ document.querySelectorAll("form").forEach((form) => {
     emailjs
       .sendForm("service_gipisdi", "template_v9i5zrl", this)
       .then(() => {
-        if (note) {
-          note.textContent =
-            "✅ Reservation request sent successfully. We will contact you shortly.";
-        }
-
-        form.reset();
-      })
+  form.reset();
+  window.location.href = "payment.html";
+})
       .catch((error) => {
         console.error("EmailJS error:", error);
 
