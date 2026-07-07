@@ -42,18 +42,88 @@
           </div>
         </div>
         <form class="booking-card" id="quickBooking">
-          <h2>Quick Reservation</h2>
-          <div class="field-grid">
-            <label>Pickup Location<input type="text" placeholder="City or Airport" required></label>
-            <label>Return Location<input type="text" placeholder="Same or different location" required></label>
-            <label>Pickup Date<input type="date" required></label>
-            <label>Return Date<input type="date" required></label>
-            <label>Vehicle Type<select required><option value="">Select type</option><option>Economy</option><option>Sedan</option><option>SUV</option><option>Luxury</option><option>Electric</option></select></label>
-            <label>Phone Number<input type="tel" placeholder="Your phone" required></label>
-          </div>
-          <button type="submit" class="btn btn-primary full">Check Availability</button>
-          <p class="form-note" id="quickBookingNote">Submit your request and our team will contact you.</p>
-        </form>
+    <h2>Quick Reservation</h2>
+
+    <div class="field-grid">
+
+        <label>
+            Pickup Location
+            <input
+                type="text"
+                name="pickupLocation"
+                placeholder="City or Airport"
+                required>
+        </label>
+
+        <label>
+            Return Location
+            <input
+                type="text"
+                name="returnLocation"
+                placeholder="Same or different location"
+                required>
+        </label>
+
+        <label>
+            Pickup Date
+            <input
+                type="date"
+                name="pickupDate"
+                required>
+        </label>
+
+        <label>
+            Return Date
+            <input
+                type="date"
+                name="returnDate"
+                required>
+        </label>
+
+        <label>
+            Vehicle Type
+            <select
+                name="vehicle"
+                required>
+
+                <option value="">Select type</option>
+                <option>Economy</option>
+                <option>Sedan</option>
+                <option>SUV</option>
+                <option>Luxury</option>
+                <option>Electric</option>
+
+            </select>
+        </label>
+
+        <label>
+            Phone Number
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Your phone"
+                required>
+        </label>
+
+    </div>
+
+    <button
+        type="submit"
+        class="btn btn-primary full">
+
+        Check Availability
+
+    </button>
+
+    <p
+        class="form-note"
+        id="quickBookingNote">
+
+        Submit your request and our team will contact you.
+
+    </p>
+
+</form>
       </div>
     </section>
 
@@ -133,16 +203,107 @@
           <p>Fill out the form and 2Wayselling LLC will contact you to confirm vehicle availability, pricing, pickup instructions, and rental requirements.</p>
         </div>
         <form class="main-form" id="reservationForm">
-          <label>Full Name<input type="text" placeholder="Your full name" required></label>
-          <label>Email<input type="email" placeholder="you@example.com" required></label>
-          <label>Phone<input type="tel" placeholder="Phone number" required></label>
-          <label>Vehicle Preference<select required><option value="">Select vehicle</option><option>Toyota Camry</option><option>Chevrolet Tahoe</option><option>Mercedes C-Class</option><option>Other / Not sure</option></select></label>
-          <label>Pickup Date<input type="date" required></label>
-          <label>Return Date<input type="date" required></label>
-          <label class="wide">Message<textarea placeholder="Tell us your pickup location, trip details, or special requests"></textarea></label>
-          <button type="submit" class="btn btn-primary full">Submit Reservation Request</button>
-          <p class="form-note" id="reservationNote"></p>
-        </form>
+
+<label>
+Full Name
+
+<input
+type="text"
+name="fullName"
+placeholder="Your full name"
+required>
+
+</label>
+
+<label>
+
+Email
+
+<input
+type="email"
+name="email"
+placeholder="you@example.com"
+required>
+
+</label>
+
+<label>
+
+Phone
+
+<input
+type="tel"
+name="phone"
+placeholder="Phone number"
+required>
+
+</label>
+
+<label>
+
+Vehicle Preference
+
+<select
+name="vehicle"
+required>
+
+<option value="">Select vehicle</option>
+
+<option>Toyota Camry</option>
+
+<option>Chevrolet Tahoe</option>
+
+<option>Mercedes C-Class</option>
+
+<option>Other / Not sure</option>
+
+</select>
+
+</label>
+
+<label>
+
+Pickup Date
+
+<input
+type="date"
+name="pickupDate"
+required>
+
+</label>
+
+<label>
+
+Return Date
+
+<input
+type="date"
+name="returnDate"
+required>
+
+</label>
+
+<label class="wide">
+
+Message
+
+<textarea
+name="message"
+placeholder="Tell us your pickup location, trip details, or special requests"></textarea>
+
+</label>
+
+<button
+type="submit"
+class="btn btn-primary full">
+
+Submit Reservation Request
+
+</button>
+
+<p class="form-note" id="reservationNote"></p>
+
+</form>
       </div>
     </section>
 
@@ -170,6 +331,12 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  emailjs.init("uY9Ws6zBaBRwnPDG5");
+</script>
+
+<script src="script.js"></script>
 </body>
 </html>

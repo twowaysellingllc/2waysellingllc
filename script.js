@@ -1,14 +1,42 @@
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-const year = document.getElementById('year');
-if (year) year.textContent = new Date().getFullYear();
-menuToggle?.addEventListener('click', () => navLinks.classList.toggle('active'));
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+const year = document.getElementById("year");
 
-document.querySelectorAll('form').forEach(form => {
-  form.addEventListener('submit', event => {
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
+
+menuToggle?.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+document.querySelectorAll("form").forEach((form) => {
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
-    const note = form.querySelector('.form-note');
-    if (note) note.textContent = 'Thank you. Your reservation request has been received. Please connect this form to email or booking software before going live.';
-    form.reset();
+
+    const note = form.querySelector(".form-note");
+
+    if (note) {
+      note.textContent = "Sending your reservation request...";
+    }
+
+    emailjs
+      .sendForm("service_gipisdi", "template_v9i5zrl", this)
+      .then(() => {
+        if (note) {
+          note.textContent =
+            "✅ Reservation request sent successfully. We will contact you shortly.";
+        }
+
+        form.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS error:", error);
+
+        if (note) {
+          note.textContent =
+            "❌ Unable to send reservation. Please call or email us directly.";
+        }
+      });
   });
 });
