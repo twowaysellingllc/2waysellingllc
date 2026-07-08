@@ -3,75 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment Successful</title>
+<title>Reservation Confirmed | 2Wayselling LLC</title>
 
 <style>
 body{
-font-family:Arial,sans-serif;
-background:#f4f6f8;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+    margin:0;
+    padding:40px;
 }
-
-.card{
-background:white;
-padding:50px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
-max-width:650px;
-text-align:center;
+.container{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
-
+.check{
+    font-size:70px;
+    color:green;
+}
 h1{
-color:#28a745;
-font-size:38px;
+    color:#198754;
+    margin-bottom:10px;
 }
-
-p{
-font-size:18px;
-line-height:1.6;
+h2{
+    color:#0d6efd;
+    margin-bottom:25px;
 }
-
-a{
-display:inline-block;
-margin-top:25px;
-background:#0d6efd;
-color:white;
-padding:15px 35px;
-text-decoration:none;
-border-radius:8px;
-font-weight:bold;
+hr{
+    margin:30px 0;
+}
+.details{
+    text-align:left;
+    max-width:450px;
+    margin:auto;
+    line-height:2;
+    font-size:18px;
+}
+.status{
+    color:green;
+    font-weight:bold;
+}
+.message{
+    margin-top:30px;
+    font-size:17px;
+    line-height:1.8;
+}
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 40px;
+    background:#0d6efd;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:18px;
 }
 </style>
-
 </head>
 
 <body>
+<div class="container">
+  <div class="check">✔</div>
+  <h1>Reservation Confirmed</h1>
+  <h2 id="reservationId"></h2>
+  <hr>
 
-<div class="card">
+  <div class="details">
+    <p><strong>Name:</strong> <span id="customerName"></span></p>
+    <p><strong>Vehicle:</strong> <span id="vehicle"></span></p>
+    <p><strong>Pickup Location:</strong> <span id="pickupLocation"></span></p>
+    <p><strong>Return Location:</strong> <span id="returnLocation"></span></p>
+    <p><strong>Pickup Date:</strong> <span id="pickupDate"></span></p>
+    <p><strong>Return Date:</strong> <span id="returnDate"></span></p>
+    <p><strong>Payment Status:</strong> <span class="status">PAID</span></p>
+  </div>
 
-<h1>✓ Payment Successful</h1>
+  <div class="message">
+    <p>Thank you for choosing <strong>2Wayselling LLC</strong>.</p>
+    <p>Your reservation deposit has been received successfully.</p>
+    <p>A confirmation email has been sent to your email address.</p>
+    <p>Our reservation team will contact you before your pickup date with your vehicle details and pickup instructions.</p>
+  </div>
 
-<p>
-Thank you for your reservation deposit.
-</p>
-
-<p>
-Your payment has been received successfully.
-</p>
-
-<p>
-Our reservation team will contact you shortly with your booking confirmation and pickup instructions.
-</p>
-
-<a href="index.html">
-Return to Home
-</a>
-
+  <a href="index.html" class="btn">Return to Home</a>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+emailjs.init("uY9Ws6zBaBRwnPDG5");
+
+const SUPABASE_URL = "https://ymcpxaheusrxgmgitceu.supabase.co";
+const SUPABASE_KEY = "sb_publishable_WYKUu85jk5xwMutqo6Ex3Q_q6PvtOK4";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const params = new URLSearchParams(window.location.search);
+
+if (params.get("paid") === "true") {
+  const reservation = JSON.parse(localStorage.getItem("reservationData"));
+
+  if (reservation) {
+    reservation.reservationId =
+      "2WS-" +
+      new Date().getFullYear() +
+      String(new Date().getMonth() + 1).padStart(2, "0") +
+      String(new Date().getDate()).padStart(2, "0") +
+      "-" +
+      Date.now().toString().slice(-6);
+
+    reservation.paymentStatus = "PAID";
+    reservation.reservationStatus = "Confirmed";
+
+    document.getElementById("reservationId").textContent = reservation.reservationId;
+    document.getElementById("customerName").textContent = reservation.fullName;
+    document.getElementById("vehicle").textContent = reservation.vehicle;
+    document.getElementById("pickupLocation").textContent = reservation.pickupLocation;
+    document.getElementById("returnLocation").textContent = reservation.returnLocation;
+    document.getElementById("pickupDate").textContent = reservation.pickupDate;
+    document.getElementById("returnDate").textContent = reservation.returnDate;
+
+    const databaseRecord = {
+      reservation_id: reservation.reservationId,
+      full_name: reservation.fullName,
+      email: reservation.email,
+      phone: reservation.phone,
+      vehicle: reservation.vehicle,
+      pickup_location: reservation.pickupLocation,
+      return_location: reservation.returnLocation,
+      pickup_date: reservation.pickupDate,
+      return_date: reservation.returnDate,
+      message: reservation.message,
+      payment_status: reservation.paymentStatus,
+      reservation_status: reservation.reservationStatus
+    };
+
+    Promise.all([
+      supabaseClient.from("reservations").insert([databaseRecord]),
+      emailjs.send("service_gipisdi", "template_v9i5zrl", reservation),
+      emailjs.send("service_gipisdi", "template_vjyeisg", reservation)
+    ])
+    .then((results) => {
+      const supabaseResult = results[0];
+
+      if (supabaseResult.error) {
+        console.error("Supabase insert failed:", supabaseResult.error);
+        return;
+      }
+
+      localStorage.removeItem("reservationData");
+      console.log("Reservation saved and emails sent successfully.");
+    })
+    .catch((error) => {
+      console.error("Reservation confirmation failed:", error);
+    });
+  }
+}
+</script>
 </body>
 </html>

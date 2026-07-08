@@ -41,133 +41,65 @@
             <a class="btn btn-secondary" href="#fleet">View Fleet</a>
           </div>
         </div>
+
         <form class="booking-card" id="quickBooking">
-    <h2>Quick Reservation</h2>
+          <h2>Quick Reservation</h2>
+          <div class="field-grid">
+            <label>
+              Full Name
+              <input type="text" name="fullName" placeholder="Your full name" required>
+            </label>
 
-    <div class="field-grid">
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
 
-<label>
-Full Name
-<input
-type="text"
-name="fullName"
-placeholder="Your full name"
-required>
-</label>
+            <label>
+              Pickup Location
+              <input type="text" name="pickupLocation" placeholder="City or Airport" required>
+            </label>
 
-<label>
-Email
-<input
-type="email"
-name="email"
-placeholder="you@example.com"
-required>
-</label>
+            <label>
+              Return Location
+              <input type="text" name="returnLocation" placeholder="Same or different location" required>
+            </label>
 
-<label>
-Pickup Location
-<input
-type="text"
-name="pickupLocation"
-placeholder="City or Airport"
-required>
-</label>
+            <label>
+              Pickup Date
+              <input type="date" name="pickupDate" required>
+            </label>
 
-<label>
-Return Location
-<input
-type="text"
-name="returnLocation"
-placeholder="Same or different location"
-required>
-</label>
+            <label>
+              Return Date
+              <input type="date" name="returnDate" required>
+            </label>
 
-<label>
-Pickup Date
-<input
-type="date"
-name="pickupDate"
-required>
-</label>
+            <label>
+              Vehicle Type
+              <select name="vehicle" required>
+                <option value="">Select Vehicle</option>
+                <option>Toyota Camry</option>
+                <option>Chevrolet Tahoe</option>
+                <option>Mercedes C-Class</option>
+                <option>Other</option>
+              </select>
+            </label>
 
-<label>
-Return Date
-<input
-type="date"
-name="returnDate"
-required>
-</label>
+            <label>
+              Phone Number
+              <input type="tel" name="phone" placeholder="Your phone" required>
+            </label>
 
-<label>
-Vehicle Type
+            <label class="wide">
+              Special Requests
+              <textarea name="message" placeholder="Any additional information (optional)"></textarea>
+            </label>
+          </div>
 
-<select
-name="vehicle"
-required>
-
-<option value="">
-Select Vehicle
-</option>
-
-<option>
-Toyota Camry
-</option>
-
-<option>
-Chevrolet Tahoe
-</option>
-
-<option>
-Mercedes C-Class
-</option>
-
-<option>
-Other
-</option>
-
-</select>
-
-</label>
-
-<label>
-Phone Number
-<input
-type="tel"
-name="phone"
-placeholder="Your phone"
-required>
-</label>
-
-<label class="wide">
-
-Special Requests
-
-<textarea
-name="message"
-placeholder="Any additional information (optional)">
-</textarea>
-
-</label>
-
-</div>
-
-    <button
-        type="submit"
-        class="btn btn-primary full">
-
-        Check Availability
-
-    </button>
-
-    <p
-        class="form-note"
-        id="quickBookingNote">
-
-        Submit your request and our team will contact you.
-
-    </p>
-
-</form>
+          <button type="submit" class="btn btn-primary full">Continue to Secure Payment</button>
+          <p class="form-note" id="quickBookingNote">Submit your request and continue to secure deposit payment.</p>
+        </form>
       </div>
     </section>
 
@@ -187,15 +119,33 @@ placeholder="Any additional information (optional)">
       <div class="fleet-grid">
         <article class="car-card">
           <div class="car-image sedan"></div>
-          <div class="car-body"><h3>Mustang</h3><p>Comfortable sedan for business and daily travel.</p><ul><li>5 Seats</li><li>Automatic</li><li>Great MPG</li></ul><strong>From $49/day</strong><a href="#booking" class="card-link">Book Now</a></div>
+          <div class="car-body">
+            <h3>Mustang</h3>
+            <p>Comfortable sedan for business and daily travel.</p>
+            <ul><li>5 Seats</li><li>Automatic</li><li>Great MPG</li></ul>
+            <strong>From $49/day</strong>
+            <a href="#booking" class="card-link">Book Now</a>
+          </div>
         </article>
         <article class="car-card">
           <div class="car-image suv"></div>
-          <div class="car-body"><h3>Chevrolet Tahoe</h3><p>Spacious SUV for family trips and group travel.</p><ul><li>7 Seats</li><li>Automatic</li><li>Large Cargo</li></ul><strong>From $89/day</strong><a href="#booking" class="card-link">Book Now</a></div>
+          <div class="car-body">
+            <h3>Chevrolet Tahoe</h3>
+            <p>Spacious SUV for family trips and group travel.</p>
+            <ul><li>7 Seats</li><li>Automatic</li><li>Large Cargo</li></ul>
+            <strong>From $89/day</strong>
+            <a href="#booking" class="card-link">Book Now</a>
+          </div>
         </article>
         <article class="car-card">
           <div class="car-image luxury"></div>
-          <div class="car-body"><h3>Mercedes C-Class</h3><p>Premium ride for events, clients, and luxury travel.</p><ul><li>5 Seats</li><li>Luxury Interior</li><li>Premium Comfort</li></ul><strong>From $99/day</strong><a href="#booking" class="card-link">Book Now</a></div>
+          <div class="car-body">
+            <h3>Mercedes C-Class</h3>
+            <p>Premium ride for events, clients, and luxury travel.</p>
+            <ul><li>5 Seats</li><li>Luxury Interior</li><li>Premium Comfort</li></ul>
+            <strong>From $99/day</strong>
+            <a href="#booking" class="card-link">Book Now</a>
+          </div>
         </article>
       </div>
     </section>
@@ -244,25 +194,64 @@ placeholder="Any additional information (optional)">
         <div>
           <p class="eyebrow">Reserve Now</p>
           <h2>Request your rental today.</h2>
-          <p>Fill out the form and 2Wayselling LLC will contact you to confirm vehicle availability, pricing, pickup instructions, and rental requirements.</p>
+          <p>Fill out the reservation form below. After submitting your reservation, you will be redirected to our secure payment page. Once payment is completed, your reservation will be confirmed automatically.</p>
         </div>
-<div class="booking-info">
 
-    <h2>Need a Custom Rental?</h2>
+        <form class="main-form" id="reservationForm">
+          <label>
+            Full Name
+            <input type="text" name="fullName" placeholder="Your full name" required>
+          </label>
 
-    <p>
-        Looking for airport pickup, long-term rental, business rental,
-        or a custom vehicle request?
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
 
-        Submit the reservation form above or contact us directly.
-    </p>
+          <label>
+            Phone
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+          </label>
 
-    <a href="#contact" class="btn btn-primary">
-        Contact Us
-    </a>
+          <label>
+            Vehicle
+            <select name="vehicle" required>
+              <option value="">Select Vehicle</option>
+              <option>Toyota Camry</option>
+              <option>Chevrolet Tahoe</option>
+              <option>Mercedes C-Class</option>
+              <option>Other</option>
+            </select>
+          </label>
 
-</div>
-</form>
+          <label>
+            Pickup Location
+            <input type="text" name="pickupLocation" placeholder="Pickup Location" required>
+          </label>
+
+          <label>
+            Return Location
+            <input type="text" name="returnLocation" placeholder="Return Location" required>
+          </label>
+
+          <label>
+            Pickup Date
+            <input type="date" name="pickupDate" required>
+          </label>
+
+          <label>
+            Return Date
+            <input type="date" name="returnDate" required>
+          </label>
+
+          <label class="wide">
+            Special Requests
+            <textarea name="message" placeholder="Special requests (optional)"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary full">Continue to Secure Payment</button>
+          <p class="form-note">After submitting, you'll be redirected to Stripe to securely pay your reservation deposit.</p>
+        </form>
       </div>
     </section>
 
@@ -291,11 +280,10 @@ placeholder="Any additional information (optional)">
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-  emailjs.init("uY9Ws6zBaBRwnPDG5");
-</script>
-
-<script src="script.js"></script>
+  <script>
+    emailjs.init("uY9Ws6zBaBRwnPDG5");
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
 </body>
 </html>
