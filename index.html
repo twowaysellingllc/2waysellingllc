@@ -46,66 +46,110 @@
 
     <div class="field-grid">
 
-        <label>
-            Pickup Location
-            <input
-                type="text"
-                name="pickupLocation"
-                placeholder="City or Airport"
-                required>
-        </label>
+<label>
+Full Name
+<input
+type="text"
+name="fullName"
+placeholder="Your full name"
+required>
+</label>
 
-        <label>
-            Return Location
-            <input
-                type="text"
-                name="returnLocation"
-                placeholder="Same or different location"
-                required>
-        </label>
+<label>
+Email
+<input
+type="email"
+name="email"
+placeholder="you@example.com"
+required>
+</label>
 
-        <label>
-            Pickup Date
-            <input
-                type="date"
-                name="pickupDate"
-                required>
-        </label>
+<label>
+Pickup Location
+<input
+type="text"
+name="pickupLocation"
+placeholder="City or Airport"
+required>
+</label>
 
-        <label>
-            Return Date
-            <input
-                type="date"
-                name="returnDate"
-                required>
-        </label>
+<label>
+Return Location
+<input
+type="text"
+name="returnLocation"
+placeholder="Same or different location"
+required>
+</label>
 
-        <label>
-            Vehicle Type
-            <select
-                name="vehicle"
-                required>
+<label>
+Pickup Date
+<input
+type="date"
+name="pickupDate"
+required>
+</label>
 
-                <option value="">Select type</option>
-                <option>Economy</option>
-                <option>Sedan</option>
-                <option>SUV</option>
-                <option>Luxury</option>
-                <option>Electric</option>
+<label>
+Return Date
+<input
+type="date"
+name="returnDate"
+required>
+</label>
 
-            </select>
-        </label>
+<label>
+Vehicle Type
 
-        <label>
-            Phone Number
-            <input
-                type="tel"
-                name="phone"
-                placeholder="Your phone"
-                required>
-        </label>
+<select
+name="vehicle"
+required>
 
-    </div>
+<option value="">
+Select Vehicle
+</option>
+
+<option>
+Toyota Camry
+</option>
+
+<option>
+Chevrolet Tahoe
+</option>
+
+<option>
+Mercedes C-Class
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</label>
+
+<label>
+Phone Number
+<input
+type="tel"
+name="phone"
+placeholder="Your phone"
+required>
+</label>
+
+<label class="wide">
+
+Special Requests
+
+<textarea
+name="message"
+placeholder="Any additional information (optional)">
+</textarea>
+
+</label>
+
+</div>
 
     <button
         type="submit"
@@ -202,107 +246,22 @@
           <h2>Request your rental today.</h2>
           <p>Fill out the form and 2Wayselling LLC will contact you to confirm vehicle availability, pricing, pickup instructions, and rental requirements.</p>
         </div>
-        <form class="main-form" id="reservationForm">
+<div class="booking-info">
 
-<label>
-Full Name
+    <h2>Need a Custom Rental?</h2>
 
-<input
-type="text"
-name="fullName"
-placeholder="Your full name"
-required>
+    <p>
+        Looking for airport pickup, long-term rental, business rental,
+        or a custom vehicle request?
 
-</label>
+        Submit the reservation form above or contact us directly.
+    </p>
 
-<label>
+    <a href="#contact" class="btn btn-primary">
+        Contact Us
+    </a>
 
-Email
-
-<input
-type="email"
-name="email"
-placeholder="you@example.com"
-required>
-
-</label>
-
-<label>
-
-Phone
-
-<input
-type="tel"
-name="phone"
-placeholder="Phone number"
-required>
-
-</label>
-
-<label>
-
-Vehicle Preference
-
-<select
-name="vehicle"
-required>
-
-<option value="">Select vehicle</option>
-
-<option>Toyota Camry</option>
-
-<option>Chevrolet Tahoe</option>
-
-<option>Mercedes C-Class</option>
-
-<option>Other / Not sure</option>
-
-</select>
-
-</label>
-
-<label>
-
-Pickup Date
-
-<input
-type="date"
-name="pickupDate"
-required>
-
-</label>
-
-<label>
-
-Return Date
-
-<input
-type="date"
-name="returnDate"
-required>
-
-</label>
-
-<label class="wide">
-
-Message
-
-<textarea
-name="message"
-placeholder="Tell us your pickup location, trip details, or special requests"></textarea>
-
-</label>
-
-<button
-type="submit"
-class="btn btn-primary full">
-
-Submit Reservation Request
-
-</button>
-
-<p class="form-note" id="reservationNote"></p>
-
+</div>
 </form>
       </div>
     </section>
