@@ -1,11 +1,3 @@
-const SUPABASE_URL = "https://ymcpxaheusrxgmgitceu.supabase.com";
-const SUPABASE_KEY = "sb_publishable_WYKUu85jk5xwMutqo6Ex3Q_q6PvtOK4";
-
-const supabase = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
-
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 const year = document.getElementById("year");
