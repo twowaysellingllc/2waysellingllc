@@ -79,7 +79,7 @@ document.querySelectorAll("form").forEach((form) => {
       JSON.stringify(reservationData)
     );
 
-    window.location.href = "payment.html";
+    window.location.href = "https://buy.stripe.com/14A3cxehU2YPbUG8Ef8og01";
 
   });
 
