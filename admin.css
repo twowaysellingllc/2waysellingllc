@@ -6,7 +6,7 @@
 }
 
 body{
-    background:#f4f6f9;
+    background:#8dabd7;
 }
 
 .container{
@@ -27,7 +27,7 @@ header h1{
 
 #logout{
     background:#d32f2f;
-    color:white;
+    color:rgb(217, 152, 152);
     border:none;
     padding:12px 25px;
     border-radius:8px;
@@ -47,7 +47,7 @@ header h1{
 }
 
 .card{
-    background:white;
+    background:rgb(185, 158, 158);
     border-radius:12px;
     padding:25px;
     text-align:center;
