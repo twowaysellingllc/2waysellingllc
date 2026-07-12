@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login | 2Wayselling LLC</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+body{
+    margin:0;
+    background:#f5f5f5;
+    font-family:Arial,sans-serif;
+}
+
+.login-container{
+    width:400px;
+    margin:80px auto;
+    background:#fff;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin-bottom:20px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#000;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:17px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#222;
+}
+
+#error{
+    color:red;
+    text-align:center;
+    margin-top:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<h1>Admin Login</h1>
+
+<form id="loginForm">
+
+<input
+type="email"
+id="email"
+placeholder="Admin Email"
+required>
+
+<input
+type="password"
+id="password"
+placeholder="Password"
+required>
+
+<button type="submit">
+Login
+</button>
+
+<p id="error"></p>
+
+</form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="admin-login.js"></script>
+
+</body>
+</html>

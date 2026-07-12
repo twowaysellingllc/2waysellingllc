@@ -37,69 +37,11 @@
           <h1>Drive your journey with confidence.</h1>
           <p class="hero-text">Clean, reliable, and affordable rental cars for business trips, vacations, airport rides, and daily travel.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#booking">Continue to Secure Payment</a>
+            <a class="btn btn-primary" href="#booking">Reserve Your Vehicle</a>
             <a class="btn btn-secondary" href="#fleet">View Fleet</a>
           </div>
         </div>
 
-        <form class="booking-card" id="quickBooking">
-          <h2>Quick Reservation</h2>
-          <div class="field-grid">
-            <label>
-              Full Name
-              <input type="text" name="fullName" placeholder="Your full name" required>
-            </label>
-
-            <label>
-              Email
-              <input type="email" name="email" placeholder="you@example.com" required>
-            </label>
-
-            <label>
-              Pickup Location
-              <input type="text" name="pickupLocation" placeholder="City or Airport" required>
-            </label>
-
-            <label>
-              Return Location
-              <input type="text" name="returnLocation" placeholder="Same or different location" required>
-            </label>
-
-            <label>
-              Pickup Date
-              <input type="date" name="pickupDate" required>
-            </label>
-
-            <label>
-              Return Date
-              <input type="date" name="returnDate" required>
-            </label>
-
-            <label>
-              Vehicle Type
-              <select name="vehicle" required>
-                <option value="">Select Vehicle</option>
-                <option>Toyota Camry</option>
-                <option>Chevrolet Tahoe</option>
-                <option>Mercedes C-Class</option>
-                <option>Other</option>
-              </select>
-            </label>
-
-            <label>
-              Phone Number
-              <input type="tel" name="phone" placeholder="Your phone" required>
-            </label>
-
-            <label class="wide">
-              Special Requests
-              <textarea name="message" placeholder="Any additional information (optional)"></textarea>
-            </label>
-          </div>
-
-          <button type="submit" class="btn btn-primary full">Continue to Secure Payment</button>
-          <p class="form-note" id="quickBookingNote">Submit your request and continue to secure deposit payment.</p>
-        </form>
       </div>
     </section>
 
@@ -192,9 +134,9 @@
     <section class="section container" id="booking">
       <div class="booking-section">
         <div>
-          <p class="eyebrow">Reserve Now</p>
-          <h2>Request your rental today.</h2>
-          <p>Fill out the reservation form below. After submitting your reservation, you will be redirected to our secure payment page. Once payment is completed, your reservation will be confirmed automatically.</p>
+          <p class="eyebrow">Book Your Rental</p>
+          <h2>Complete Your Reservation</h2>
+          <p>Complete the reservation form below with your rental details.Once submitted, you'll be redirected to our secure Stripe payment page.After successful payment, your reservation will be confirmed automatically.</p>
         </div>
 
         <form class="main-form" id="reservationForm">
@@ -249,7 +191,7 @@
             <textarea name="message" placeholder="Special requests (optional)"></textarea>
           </label>
 
-          <button type="submit" class="btn btn-primary full">Continue to Secure Payment</button>
+          <button type="submit" class="btn btn-primary full">Proceed to Secure Payment</button>
           <p class="form-note">After submitting, you'll be redirected to Stripe to securely pay your reservation deposit.</p>
         </form>
       </div>
