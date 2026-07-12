@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Dashboard</title>
+
+<title>Admin Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 </head>
+
 <body>
 
-<h1>Welcome Admin</h1>
+<h1>Reservations</h1>
+
+<button id="logout">Logout</button>
+
+<table border="1" width="100%">
+
+<thead>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Car</th>
+<th>Pickup</th>
+<th>Return</th>
+<th>Payment</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="tableBody">
+
+</tbody>
+
+</table>
+
+<script src="admin.js"></script>
 
 </body>
 </html>
