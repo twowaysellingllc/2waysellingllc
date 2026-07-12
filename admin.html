@@ -1,125 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>2WaySelling Admin Dashboard</title>
-
-<link rel="stylesheet" href="admin.css">
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2Wayselling LLC | Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-
 <body>
-
-<div class="container">
-
-    <header>
-
-        <h1>2WaySelling Admin Dashboard</h1>
-
-        <button id="logout">
-            Logout
-        </button>
-
-    </header>
-
-
-    <div class="cards">
-
-        <div class="card">
-
-            <h2 id="totalBookings">0</h2>
-
-            <p>Total Reservations</p>
-
-        </div>
-
-        <div class="card">
-
-            <h2 id="paidBookings">0</h2>
-
-            <p>Paid</p>
-
-        </div>
-
-        <div class="card">
-
-            <h2 id="pendingBookings">0</h2>
-
-            <p>Pending Payment</p>
-
-        </div>
-
-        <div class="card">
-
-            <h2 id="confirmedBookings">0</h2>
-
-            <p>Confirmed</p>
-
-        </div>
-
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">2Wayselling LLC</p>
+      <h1>Reservation Dashboard</h1>
     </div>
+    <button id="logout" class="btn btn-logout" type="button">Logout</button>
+  </header>
 
+  <main class="container">
+    <section class="cards" aria-label="Reservation statistics">
+      <article class="card"><h2 id="totalBookings">0</h2><p>Total Reservations</p></article>
+      <article class="card"><h2 id="paidBookings">0</h2><p>Paid</p></article>
+      <article class="card"><h2 id="pendingBookings">0</h2><p>Pending Payment</p></article>
+      <article class="card"><h2 id="confirmedBookings">0</h2><p>Confirmed</p></article>
+    </section>
 
-    <input
-        id="search"
-        placeholder="Search reservation..."
-    >
+    <section class="panel">
+      <div class="toolbar">
+        <div>
+          <h2>Reservations</h2>
+          <p id="dashboardMessage" class="message" aria-live="polite"></p>
+        </div>
+        <input id="search" type="search" placeholder="Search reservation, customer, vehicle..." autocomplete="off">
+      </div>
 
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Reservation ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Vehicle</th>
+              <th>Pickup</th><th>Return</th><th>Pickup Date</th><th>Return Date</th>
+              <th>Payment</th><th>Status</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr><td colspan="12" class="empty-state">Loading reservations...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 
-    <div class="table-wrapper">
+  <div id="reservationModal" class="modal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+      <h2 id="modalTitle">Reservation Details</h2>
+      <div id="modalContent" class="modal-content"></div>
+    </section>
+  </div>
 
-<table>
-
-<thead>
-
-<tr>
-
-<th>ID</th>
-
-<th>Name</th>
-
-<th>Email</th>
-
-<th>Phone</th>
-
-<th>Vehicle</th>
-
-<th>Pickup</th>
-
-<th>Return</th>
-
-<th>Pickup Date</th>
-
-<th>Return Date</th>
-
-<th>Payment</th>
-
-<th>Status</th>
-
-<th>Actions</th>
-
-</tr>
-
-</thead>
-
-<tbody id="tableBody">
-
-</tbody>
-
-</table>
-
-</div>
-
-</div>
-
-<script src="admin.js"></script>
-
+  <script src="admin.js"></script>
 </body>
-
 </html>
