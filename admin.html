@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 
-<title>Admin Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>2WaySelling Admin Dashboard</title>
+
+<link rel="stylesheet" href="admin.css">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -10,22 +16,94 @@
 
 <body>
 
-<h1>Reservations</h1>
+<div class="container">
 
-<button id="logout">Logout</button>
+    <header>
 
-<table border="1" width="100%">
+        <h1>2WaySelling Admin Dashboard</h1>
+
+        <button id="logout">
+            Logout
+        </button>
+
+    </header>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h2 id="totalBookings">0</h2>
+
+            <p>Total Reservations</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="paidBookings">0</h2>
+
+            <p>Paid</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="pendingBookings">0</h2>
+
+            <p>Pending Payment</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="confirmedBookings">0</h2>
+
+            <p>Confirmed</p>
+
+        </div>
+
+    </div>
+
+
+    <input
+        id="search"
+        placeholder="Search reservation..."
+    >
+
+
+    <div class="table-wrapper">
+
+<table>
 
 <thead>
 
 <tr>
+
+<th>ID</th>
+
 <th>Name</th>
+
 <th>Email</th>
-<th>Car</th>
+
+<th>Phone</th>
+
+<th>Vehicle</th>
+
 <th>Pickup</th>
+
 <th>Return</th>
+
+<th>Pickup Date</th>
+
+<th>Return Date</th>
+
 <th>Payment</th>
-<th>Action</th>
+
+<th>Status</th>
+
+<th>Actions</th>
+
 </tr>
 
 </thead>
@@ -36,7 +114,12 @@
 
 </table>
 
+</div>
+
+</div>
+
 <script src="admin.js"></script>
 
 </body>
+
 </html>
